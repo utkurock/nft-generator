@@ -1,26 +1,99 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-sans);
+  --font-display: var(--font-display);
+
+  --color-base: var(--c-base);
+  --color-panel: var(--c-panel);
+  --color-panel-2: var(--c-panel-2);
+  --color-border: var(--c-border);
+  --color-border-strong: var(--c-border-strong);
+  --color-cream: var(--c-fg);
+  --color-cream-dim: var(--c-fg-dim);
+  --color-gold: var(--c-gold);
+  --color-gold-dim: var(--c-gold-dim);
+  --color-danger: var(--c-danger);
+  --color-purple-arcade: var(--c-purple);
+  --color-amber-arcade: var(--c-amber);
+  --color-sky-arcade: var(--c-sky);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Light theme (default) */
+:root,
+:root[data-theme="light"] {
+  --c-base: #ebe5d6;
+  --c-panel: #f2ede0;
+  --c-panel-2: #ded8c9;
+  --c-border: rgba(26, 26, 26, 0.12);
+  --c-border-strong: rgba(26, 26, 26, 0.28);
+  --c-fg: #1a1a1a;
+  --c-fg-dim: #6b6b6b;
+  --c-grid: rgba(26, 26, 26, 0.04);
+  --c-scroll-track: #ded8c9;
+  --c-gold: #d99b1f;
+  --c-gold-dim: #b8831a;
+  --c-danger: #c74040;
+  --c-purple: #7a4ec7;
+  --c-amber: #d97a1f;
+  --c-sky: #3d7aa5;
+}
+
+/* Dark theme */
+:root[data-theme="dark"] {
+  --c-base: #0e2f28;
+  --c-panel: #133e34;
+  --c-panel-2: #0f3629;
+  --c-border: rgba(232, 222, 200, 0.12);
+  --c-border-strong: rgba(232, 222, 200, 0.25);
+  --c-fg: #e8dec8;
+  --c-fg-dim: #a8a089;
+  --c-grid: rgba(232, 222, 200, 0.035);
+  --c-scroll-track: #0f3629;
+  --c-gold: #e6b94a;
+  --c-gold-dim: #b8912e;
+  --c-danger: #e05252;
+  --c-purple: #a874e8;
+  --c-amber: #f0a040;
+  --c-sky: #5eb3d9;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), "Segoe UI", system-ui, sans-serif;
+  background-color: var(--c-base);
+  color: var(--c-fg);
+  background-image:
+    linear-gradient(to right, var(--c-grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--c-grid) 1px, transparent 1px);
+  background-size: 42px 42px;
+  background-attachment: fixed;
+}
+
+.font-display {
+  font-family: var(--font-display), "Impact", "Arial Black", sans-serif;
+  letter-spacing: 0.01em;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--c-scroll-track);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--c-gold-dim);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--c-gold);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
 }
