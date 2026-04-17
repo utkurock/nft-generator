@@ -29,7 +29,7 @@ export default function Home() {
           <div className="flex items-center gap-2">
             <ThemeToggle />
             <a
-              href="https://github.com"
+              href="https://github.com/utkurock/nft-generator"
               target="_blank"
               rel="noreferrer"
               className="rounded-full border border-border-strong bg-base px-5 py-2 font-display text-xs uppercase tracking-wider text-cream transition hover:border-gold hover:text-gold"

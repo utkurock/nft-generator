@@ -5,6 +5,8 @@ weighting, forbidden-combination rules, and a two-tier system
 (`Legendary 1/1` and `Random`). Everything runs locally in your browser —
 images and metadata never leave your machine.
 
+![NFT Generator screenshot](./public/screenshot.png)
+
 ## Features
 
 - **Two-tier system** — hand-crafted `Legendary (1/1)` NFTs + `Random`
